@@ -1,7 +1,5 @@
 package com.provider.controller;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -23,7 +21,7 @@ public class HelloController {
         System.out.println(instance.getUri().getPath());
         System.out.println("********************************************");
         
-        return new Date().toString();
+        return "我爱你!";
     }
 
 }
