@@ -1,5 +1,6 @@
 package com.consumer.controller;
 
+import com.example.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,9 +13,12 @@ public class ConsumerController {
 	private RestTemplate restTemplate;
 	
 	@RequestMapping("/get_provider_info")
-	public String getProviderInfo(){
-		String result = restTemplate.getForObject("http://hello-service/hello", String.class);
-		System.out.println("时间是--->"+result);
+	public UserEntity getProviderInfo(){
+		UserEntity result = restTemplate.getForObject("http://hello-service/hello", UserEntity.class);
+
+		System.out.println("userId--->"+result.getUserId());
+		System.out.println("userName--->"+result.getUserName());
+
 		return result;
 	}
 }

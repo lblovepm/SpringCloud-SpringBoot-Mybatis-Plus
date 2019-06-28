@@ -1,6 +1,6 @@
 #配置端口
 server:
-  port: 80
+  port: 8081
   
 # 配置注册到注册中心的服务名称
 spring:
